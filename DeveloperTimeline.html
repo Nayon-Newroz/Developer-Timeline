@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.25.0/axios.min.js" integrity="sha512-/Q6t3CASm04EliI1QyIDAA/nDo9R8FQ/BULoUFyN4n/BDdyIxeH7u++Z+eobdmr11gG5D/6nPFyDlnisDwhpYA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  </head>
+  <body onload="myData()">
+    <div class="header">
+      <p>iGitLogs - Developer Timeline</p>
+    </div>
+    <div class="headDesign">
+      <img src="myImage.png" alt="" class="imgStyle" />
+      <p class="nameTitle">Mahfuzul Alam</p>
+      <p class="timeStyle">Last committed : 3 hours ago</p>
+    </div>
+
+<!-- <button onclick="getData()">Check</button> -->
+    <div id="timeline" class="timeline">
+
+    </div>
+    <!-- <div class="timeline">
+    
+      <div id="container" class="container left">
+        <div class="content">
+          <div class="contentDetailSide">
+            <h2>Refactoring Third Party Service Consumption Logs</h2>
+            <div class="middleDiv">
+              <i class="fa fa-clock-o" aria-hidden="true"></i> 
+              <label class="timeText">3:45PM</label>  
+              <button class="button">main</button> 
+            </div> 
+
+            <div>
+              <i class="fa fa-at" aria-hidden="true"></i> 
+               <label class="timeText">
+                apigw-personal.fast-pay.iq
+              </label>
+            </div>
+            <hr />
+            <div class="linkDiv" >
+              <a href="" style="text-align: right; margin-bottom: 8px"> +5 more commits </a>
+            </div>
+          </div>
+          <div class="contentTimeSide">jan 14 2022</div>
+        </div>
+      </div>
+      <div class="container right">
+        <div class="content">
+          <div class="contentDetailSide">
+            <h2>Refactoring Third Party Service Consumption Logs</h2>
+            <div class="middleDiv">
+              <i class="fa fa-clock-o" aria-hidden="true"></i> 
+            <label class="timeText">3:45PM</label>  
+              <button class="button">main</button>
+
+              <i class="fa fa-car" style="font-size: 60px; color: red"></i>
+            </div>
+          
+            <div>
+              <i class="fa fa-at" aria-hidden="true"></i
+              >
+              <label class="timeText">
+                  apigw-personal.fast-pay.iq
+              </label>
+
+            </div>
+            <hr />
+            <div style="text-align: right; margin-bottom: 8px">
+              <a href=""> +5 more commits </a>
+            </div>
+          </div>
+          <div class="contentTimeSide">jan 14 2022</div>
+        </div>
+       </div> 
+      </div> -->
+    </div>
+
+
+    <script>
+        const data = [
+            {title:'Refactoring Third Party Service Consumption Logs',time:'3:45PM',buttonText:'main',url:'apigw-personal.fast-pay.iq',commit:'5 more commits'},
+            {title:'Refactoring Third Party Service Consumption Logs',time:'3:45PM',buttonText:'main',url:'apigw-personal.fast-pay.iq',commit:'5 more commits'},
+            {title:'Refactoring Third Party Service Consumption Logs',time:'3:45PM',buttonText:'main',url:'apigw-personal.fast-pay.iq',commit:'5 more commits'},
+            {title:'Refactoring Third Party Service Consumption Logs',time:'3:45PM',buttonText:'main',url:'apigw-personal.fast-pay.iq',commit:'5 more commits'},
+            {title:'Refactoring Third Party Service Consumption Logs',time:'3:45PM',buttonText:'main',url:'apigw-personal.fast-pay.iq',commit:'5 more commits'},
+        ]
+
+        function getData() {
+          console.log('working');
+          axios.get('https://jsonplaceholder.typicode.com/users')
+              .then(function (response) {
+                // handle success
+                console.log(response);
+              })
+              .catch(function (error) {
+                // handle error
+                console.log(error);
+              })
+          
+        }
+
+
+        const divTimeline = document.getElementById('timeline') 
+
+        function myData() {
+          divTimeline.innerHTML = `${data.map((item,i)=>{
+              if (i % 2 ===0) {
+                return(
+                  `<div id="container" class="container left"> 
+                  <div class="content"> 
+                    <div class="contentDetailSide"> 
+                      <h2>${item.title}</h2> 
+                      <div class="middleDiv"> 
+                        <i class="fa fa-clock-o" aria-hidden="true"></i>  
+                        <label class="timeText">${item.time}</label>
+                        <button class="button">${item.buttonText}</button> 
+                      </div>
+                      <div>
+                        <i class="fa fa-at" aria-hidden="true"></i>
+                        <label class="timeText">${item.url}</label>
+                      </div>
+                      <hr />
+                      <div class="linkDiv" >
+                        <a href="" style="text-align: right; margin-bottom: 8px">${item.commit}</a>
+                      </div>
+                    </div>
+                    <div class="contentTimeSide">jan 14 2022</div>
+                  </div>
+                </div>`
+                )
+              } 
+              else{
+                return(
+                  `<div id="container" class="container right"> 
+                  <div class="content"> 
+                    <div class="contentDetailSide"> 
+                      <h2>${item.title}</h2> 
+                      <div class="middleDiv"> 
+                        <i class="fa fa-clock-o" aria-hidden="true"></i>  
+                        <label class="timeText">${item.time}</label>
+                        <button class="button">${item.buttonText}</button> 
+                      </div>
+                      <div>
+                        <i class="fa fa-at" aria-hidden="true"></i>
+                        <label class="timeText">${item.url}</label>
+                      </div>
+                      <hr />
+                      <div class="linkDiv" >
+                        <a href="" style="text-align: right; margin-bottom: 8px">${item.commit}</a>
+                      </div>
+                    </div>
+                    <div class="contentTimeSide">jan 14 2022</div>
+                  </div>
+                </div>`
+                )
+              }
+            })}`
+  
+          }
+        
+        
+    </script>
+  </body>
+</html>
