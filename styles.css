@@ -40,7 +40,7 @@ body {
   margin: 10px 0 40px;
 }
 .imgStyle {
-  width: 160px;
+  width: 120px;
 }
 .nameTitle {
   font-size: 30px;
@@ -55,6 +55,7 @@ body {
 .timeText {
   margin-left: 5px;
   color: #0f1f38;
+  text-decoration: none;
 }
 .fa {
   color: #0f1f38;
@@ -65,7 +66,7 @@ body {
 
   border: 1px solid #0f1f38;
   color: #0f1f38;
-  padding: 8px 16px;
+  padding: 4px 16px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -75,17 +76,27 @@ body {
   cursor: pointer;
   border-radius: 10px;
 }
-.button:hover {
-  background: #0f1f38;
-  color: #fff;
-}
 
 .linkDiv {
   text-align: right;
-  margin-bottom: 8px;
+}
+ 
+summary {
+  color: #2471a3;
+  text-decoration: underline;
+  cursor: pointer;
+}
+::marker {
+  color: #2471a3;
+  font-size: 1.2em;
+}
+.list {
+  /* text-align: left; */
+  font-size: 12px;
+  color: #0f1f38;
 }
 .middleDiv {
-  margin-bottom: 16px;
+  margin-bottom: 10px;
 }
 .dateStyle {
   font-size: 60px;
@@ -113,7 +124,7 @@ body {
 
 /* Container around content */
 .container {
-  padding: 10px 40px;
+  padding: 0px 40px;
   position: relative;
   background-color: inherit;
   width: 50%;
@@ -193,20 +204,81 @@ body {
   padding: 0 20px;
 }
 .contentDetailSide h2 {
-  font-size: 24px;
+  font-size: 17px;
+  margin: 10px 0;
   color: #0f1f38;
 }
 .contentTimeSide {
-  max-width: 60px;
+  /* max-width: 60px; */
   margin: 0 20px;
-  font-size: 24px;
-  font-weight: 600;
-  line-height: 2;
+  font-size: 18px;
+  /* line-height: 2; */
   text-align: center;
   color: #0f1f38;
 }
 
+.contentTimeSide p {
+  font-size: 22px;
+  margin: 0 0 8px 0;
+
+  text-align: center;
+}
+.contentTimeSide h4 {
+  font-size: 60px;
+  font-weight: 600;
+  margin: 0 0 8px 0;
+
+  text-align: center;
+}
+
+@media only screen and (max-width: 1400px) {
+  .timeline {
+    max-width: 960px;
+  }
+  .contentDetailSide h2 {
+    font-size: 14px;
+  }
+  .timeText {
+    font-size: 12px;
+  }
+  .button {
+    font-size: 12px;
+  }
+  .contentTimeSide p {
+    font-size: 18px;
+  }
+  .contentTimeSide h4 {
+    font-size: 50px;
+  }
+  .linkDiv {
+    font-size: 12px;
+  }
+  .middleDiv {
+    margin-bottom: 3px;
+  }
+  .contentDetailSide hr {
+    margin-bottom: 3px;
+  }
+  .nameTitle {
+    font-size: 25px;
+  }
+  .timeStyle {
+    font-size: 14px;
+    margin: 0;
+  }
+  .headDesign {
+    margin: 10px 0 25px;
+  }
+  .contentTimeSide p {
+    font-size: 15px;
+  }
+  .contentTimeSide h4 {
+    font-size: 40px;
+  }
+}
+
 /* Media queries - Responsive timeline on screens less than 600px wide */
+
 @media screen and (max-width: 600px) {
   /* Place the timelime to the left */
   .timeline::after {
