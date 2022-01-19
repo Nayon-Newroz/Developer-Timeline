@@ -23,6 +23,18 @@ body {
   font-size: 24px;
   color: #0f1f38;
 }
+.footer {
+  border-top: 1px solid #0f1f38;
+  padding: 10px;
+  background: #fff;
+  text-align: center;
+}
+.footer p {
+  margin: 0;
+  font-size: 14px;
+  color: #0f1f38;
+}
+
 .headDesign {
   text-align: center;
   margin: 10px 0 40px;
