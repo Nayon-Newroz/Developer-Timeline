@@ -138,7 +138,7 @@ summary {
   height: 25px;
   right: -17px;
   background-color: white;
-  border: 4px solid #0f1f38;
+  border: 4px solid #787878;
   top: calc(50% - 16px);
   /* top: 15px; */
   border-radius: 50%;
@@ -311,14 +311,15 @@ summary {
     font-size: 10px;
   }
   .container::after { 
-    width: 10px;
-    height: 10px;
-    right: -9px;
+    width: 12px;
+    height: 12px;
+    right: -8px;
     background-color: white; 
     top: calc(50% - 8px);   
+    border: 2px solid #787878;
 }
 .right::after {
-  left: -9px;
+  left: -8px;
 }
 
 /* Media queries - Responsive timeline on screens less than 600px wide */
