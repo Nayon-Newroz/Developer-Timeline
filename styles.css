@@ -311,15 +311,15 @@ summary {
     font-size: 10px;
   }
   .container::after { 
-    width: 12px;
-    height: 12px;
-    right: -8px;
-    background-color: white; 
-    top: calc(50% - 8px);   
+    width: 8px;
+    height: 8px;
+    right: -6px;
+    background-color: white;
+    top: calc(50% - 5px);
     border: 2px solid #787878;
 }
 .right::after {
-  left: -8px;
+  left: -6px;
 }
 
 /* Media queries - Responsive timeline on screens less than 600px wide */
