@@ -80,7 +80,7 @@ body {
 .linkDiv {
   text-align: right;
 }
- 
+
 summary {
   color: #2471a3;
   text-decoration: underline;
@@ -232,23 +232,45 @@ summary {
 }
 
 @media only screen and (max-width: 1400px) {
+  .fa {
+    font-size: 12px;
+  }
+  .header p {
+    font-size: 16px;
+  }
   .timeline {
-    max-width: 960px;
+    max-width: 860px;
+  }
+  .content {
+    padding: 15px 10px 12px;
+  }
+  .contentDetailSide {
+    padding: 0 15px;
+  }
+  .contentTimeSide { 
+    margin: 0px 15px;   
+}
+  .imgStyle {
+    width: 90px;
   }
   .contentDetailSide h2 {
     font-size: 14px;
+    margin: 0 0 9px;
   }
   .timeText {
     font-size: 12px;
+    margin-left: 2px;
   }
   .button {
     font-size: 12px;
+    padding: 2px 11px;
   }
   .contentTimeSide p {
     font-size: 18px;
+    font-weight: 600;
   }
   .contentTimeSide h4 {
-    font-size: 50px;
+    font-size: 32px;
   }
   .linkDiv {
     font-size: 12px;
@@ -257,24 +279,46 @@ summary {
     margin-bottom: 3px;
   }
   .contentDetailSide hr {
-    margin-bottom: 3px;
+    margin-bottom: 4px;
+    margin-top: 5px;
   }
   .nameTitle {
-    font-size: 25px;
+    font-size: 24px;
   }
   .timeStyle {
-    font-size: 14px;
+    font-size: 13px;
     margin: 0;
   }
   .headDesign {
-    margin: 10px 0 25px;
+    margin: 10px 0 20px;
   }
   .contentTimeSide p {
-    font-size: 15px;
+    font-size: 12px;
+    margin: 0 0 4px 0;
   }
   .contentTimeSide h4 {
-    font-size: 40px;
+    font-size: 32px;
+    margin: 0 0 4px 0;
   }
+  summary {
+    font-size: 11px;
+  }
+  ::marker {
+    color: #2471a3;
+    font-size: 1em;
+  }
+  .list {
+    font-size: 10px;
+  }
+  .container::after { 
+    width: 10px;
+    height: 10px;
+    right: -9px;
+    background-color: white; 
+    top: calc(50% - 8px);   
+}
+.right::after {
+  left: -9px;
 }
 
 /* Media queries - Responsive timeline on screens less than 600px wide */
