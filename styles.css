@@ -337,6 +337,33 @@ summary {
     max-width: 225px; 
 }
 
+@media only screen and (max-width: 900px) {
+  .contentDetailSide h2{
+    font-size: 12px;
+  }
+  .timeText{
+    font-size: 10px;
+  }
+  .linkStyle {
+    max-width: 180px;
+  }
+  .button{
+    font-size: 9px;
+  }
+  .fa{
+    font-size: 12px;
+  }
+  summary{
+    font-size: 10px;
+  }
+  .contentTimeSide p{
+    font-size: 10px;
+  }
+  .contentTimeSide h4{
+    font-size: 22px;
+  }
+}
+
 /* Media queries - Responsive timeline on screens less than 600px wide */
 
 @media screen and (max-width: 600px) {
@@ -350,6 +377,7 @@ summary {
     width: 100%;
     padding-left: 70px;
     padding-right: 25px;
+    padding-bottom: 25px;
   }
 
   /* Make sure that all arrows are pointing leftwards */
@@ -363,7 +391,7 @@ summary {
   /* Make sure all circles are at the same spot */
   .left::after,
   .right::after {
-    left: 15px;
+    left: 25px;
   }
 
   /* Make all right containers behave like the left ones */
