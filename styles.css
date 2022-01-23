@@ -84,11 +84,16 @@ body {
 .linkDiv {
   text-align: right;
 }
-
+details{
+  position: relative;
+}
 summary {
   color: #2471a3;
   text-decoration: underline;
   cursor: pointer;
+  position: absolute;
+  bottom: -15px;
+  right: 0;
 }
 ::marker {
   color: #2471a3;
@@ -201,7 +206,7 @@ summary {
 
 /* The actual content */
 .content {
-  padding: 12px;
+  padding: 20px 12px;
   background-color: white;
   position: relative;
   border-radius: 6px;
@@ -213,10 +218,12 @@ summary {
   padding: 0 20px;
   flex-basis: 80%;
 }
-.contentDetailSide h2 {
+.contentDetailSide a {
   font-size: 17px;
   margin: 10px 0;
   color: #0f1f38;
+  text-decoration: none;
+  font-weight: 600;
 }
 .contentTimeSide { 
   font-size: 18px; 
@@ -253,7 +260,7 @@ summary {
     max-width: 860px;
   }
   .content {
-    padding: 15px 10px 12px;
+    padding: 15px 10px 20px;
   }
   .contentDetailSide {
     padding: 0 15px;
@@ -313,6 +320,8 @@ summary {
     margin: 0 0 4px 0;
   }
   summary {
+    
+  bottom: -10px;
     font-size: 11px;
   }
   ::marker {

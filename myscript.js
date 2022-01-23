@@ -1,5 +1,3 @@
- 
-
 const data = {
   "2021-02-25": [
     {
@@ -970,55 +968,56 @@ function myData(id) {
       if (i % 2 === 0) {
         return `<div id="container" class="container left"> 
             <div class="content"> 
-                <div class="contentDetailSide"> 
-                  <h2>${item.commits[0].repositoryName}</h2>
+                <div class="contentDetailSide">
+                <div class='linkStyle'> 
+                  <a href=${item.commits[0].html_url} target="_blank">${
+          item.commits[0].message
+        }</a>
+        </div>
                   <div class="middleDiv"> 
                       <i class="fa fa-clock-o" aria-hidden="true"></i>  
                       <label class="timeText">${formatTime(
                         item.commits[0].time
                       )}</label>
-                      <span class="button">${item.commits[0].message}</span> 
+                      <span class="button">${item.commits[0].branchName}</span> 
                   </div>
-
-                  <div class='linkStyle'>
                       <i class="fa fa-at" aria-hidden="true"></i>
-                      <a href=${
-                        item.commits[0].html_url
-                      } target="_blank" class="timeText">${
-          item.commits[0].html_url
-        }</a>
-                  </div>
+                      <label class="timeText">${
+                        item.commits[0].repositoryName
+                      }</label>
                   <hr />
                   <div class="linkDiv" >
                       <details>
                       <summary>${item.commits.length - 1} more commits</summary>
-                      <br/>
+                      
                       ${item.commits
                         .map((el, i) => {
                           if (i > 0) {
                             return `<div style=text-align:left>
-                                <h2>${el.repositoryName}</h2>
+                            <div class='linkStyle'> 
+                                <a href=${el.html_url} target="_blank">${
+                              el.message
+                            }</a>
+                            </div>
                                 <div class="middleDiv"> 
                                     <i class="fa fa-clock-o" aria-hidden="true"></i>  
                                    <label class="timeText">${formatTime(
                                      el.time
                                    )}</label>
-                                    <span class="button">${el.message}</span> 
-                                </div>
-              
-                                <div class='linkStyle'>
+                                    <span class="button">${
+                                      el.branchName
+                                    }</span> 
+                                </div> 
                                     <i class="fa fa-at" aria-hidden="true"></i>
-                                    <a href=${
-                                      el.html_url
-                                    } target="_blank" class="timeText">${
-                              el.html_url
-                            }</a>
-                                </div>
+                                    <label  class="timeText">${
+                                      el.repositoryName
+                                    }</label> 
                                 <hr />`;
                           }
                         })
                         .join("")}
-                      </details> 
+                    <div style='height:5px'></div>
+                        </details> 
                   </div>
                 </div> 
                 <div class="contentTimeSide">
@@ -1030,51 +1029,48 @@ function myData(id) {
         return `<div id="container" class="container right"> 
         <div class="content"> 
         <div class="contentDetailSide"> 
-          <h2>${item.commits[0].repositoryName}</h2>
+        <div class='linkStyle'> 
+          <a href=${item.commits[0].html_url} target="_blank">${
+          item.commits[0].message
+        }</a>
+        </div>
           <div class="middleDiv"> 
               <i class="fa fa-clock-o" aria-hidden="true"></i>  
               <label class="timeText">${formatTime(
                 item.commits[0].time
               )}</label>
-              <span class="button">${item.commits[0].message}</span> 
-          </div>
-
-          <div class='linkStyle'>
+              <span class="button">${item.commits[0].branchName}</span> 
+          </div> 
               <i class="fa fa-at" aria-hidden="true"></i>
-              <a href=${
-                item.commits[0].html_url
-              } target="_blank" class="timeText">${item.commits[0].html_url}</a>
-          </div>
+              <label class="timeText">${item.commits[0].repositoryName}</label> 
           <hr />
           <div class="linkDiv" >
               <details>
               <summary>${item.commits.length - 1} more commits</summary>
-              <br/>
+           
               ${item.commits
                 .map((el, i) => {
                   if (i > 0) {
                     return `<div style=text-align:left>
-                        <h2>${el.repositoryName}</h2>
+                    <div class='linkStyle'> 
+                        <a href=${el.html_url} target="_blank">${el.message}</a>
+                        </div>
                         <div class="middleDiv"> 
                             <i class="fa fa-clock-o" aria-hidden="true"></i>  
                            <label class="timeText">${formatTime(
                              el.time
                            )}</label>
-                            <span class="button">${el.message}</span> 
-                        </div>
-      
-                        <div class='linkStyle'>
+                            <span class="button">${el.branchName}</span> 
+                        </div> 
                             <i class="fa fa-at" aria-hidden="true"></i>
-                            <a href=${
-                              el.html_url
-                            } target="_blank" class="timeText">${
-                      el.html_url
-                    }</a>
-                        </div>
+                            <label class="timeText">${
+                              el.repositoryName
+                            }</label> 
                         <hr />`;
                   }
                 })
                 .join("")}
+                <div style='height:5px'></div>
               </details> 
           </div>
         </div> 
