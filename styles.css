@@ -97,7 +97,7 @@ summary {
 }
 ::marker {
   color: #2471a3;
-  font-size: 1.2em;
+  font-size: 0em; 
 }
 .list {
   /* text-align: left; */
@@ -246,6 +246,58 @@ summary {
 
   text-align: center;
 }
+.filter-box{
+  display: flex; justify-content: center; align-items: center; gap: 30px;
+}
+.select-style{
+  width: 250px;
+  font-size: 14px; padding: 8px; border-radius: 10px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  position: relative;
+
+}
+.form-group{
+  
+  position: relative;
+}
+select.input-lg {
+  width: 250px;
+  font-size: 14px; padding: 8px; border-radius: 10px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none; 
+}
+
+select + i.fa {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  font-size: 12px;
+}
+.dateInput{
+  border: 1px solid; border-radius: 10px; padding: 5.5px 10px; min-width: 250px;
+}
+ 
+details > summary::before {
+  font-family: "FontAwesome";
+  content: '\f055   See more';
+ position: absolute;
+ right: 0px;
+ width: 150px;
+ white-space: break-spaces;
+}
+ 
+details[open] > summary::before {
+  font-family: "FontAwesome";
+ content: '\f056   See less';
+ position: absolute;
+ right: 0px;
+ width: 150px; 
+ white-space: break-spaces; 
+}
+ 
 
 @media only screen and (max-width: 1400px) {
   .fa {
@@ -324,10 +376,7 @@ summary {
   bottom: -10px;
     font-size: 11px;
   }
-  ::marker {
-    color: #2471a3;
-    font-size: 1em;
-  }
+   
   .list {
     font-size: 10px;
   }
@@ -344,6 +393,21 @@ summary {
 }
 .linkStyle{ 
     max-width: 225px; 
+}
+select.input-lg {
+  width: 180px;
+  font-size: 14px; padding: 8px; border-radius: 10px;
+   
+}
+
+select + i.fa {
+  position: absolute;
+  top: 10px;
+  right: 16px;
+  font-size: 12px;
+}
+.dateInput{
+  border: 1px solid; border-radius: 10px; padding: 5.5px 10px; min-width: 180px;
 }
 
 @media only screen and (max-width: 900px) {
@@ -410,6 +474,12 @@ summary {
   }
   .left::before, .right::before { 
     top: calc(50% - 22px);
-    
+  }
+  .filter-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    flex-direction: column;
   }
 }

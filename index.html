@@ -2,20 +2,22 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Developer Timeline</title> 
+    <title>Developer Timeline</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
     <link rel="stylesheet" href="styles.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.25.0/axios.min.js" integrity="sha512-/Q6t3CASm04EliI1QyIDAA/nDo9R8FQ/BULoUFyN4n/BDdyIxeH7u++Z+eobdmr11gG5D/6nPFyDlnisDwhpYA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    
-    <script src="myscript.js">  
-    </script>
-    <script src="./git.json" type="file">  
-    </script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.25.0/axios.min.js"
+      integrity="sha512-/Q6t3CASm04EliI1QyIDAA/nDo9R8FQ/BULoUFyN4n/BDdyIxeH7u++Z+eobdmr11gG5D/6nPFyDlnisDwhpYA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+   
   </head>
-  <body onload="myData('timeline')">
+  <body onload="myData('timeline','filterBox')" style="max-width: 1200px; margin: auto">
     <!-- <div class="header">
       <p>iGitLogs - Developer Timeline</p>
     </div> -->
@@ -24,121 +26,40 @@
       <p class="nameTitle">Mahfuzul Alam</p>
       <p class="timeStyle">Last committed : 3 hours ago</p>
     </div>
-<!-- <button onclick="getData()">Check</button> -->
-    <div id="timeline" class="timeline">
+
+    <div  class="filter-box">
+      <div class="form-group">
+      <select name="author" id="authorSelect" class="form-control input-lg"  onchange="getAuthorValue('authorSelect')">
+        
+      </select>
+      <i class="fa fa-chevron-down"></i>
+    </div>
+    <div class="form-group">
+      <select name="author" id="repoSelect" class="form-control input-lg"  onchange="getAuthorValue('repoSelect')">
+        
+      </select>
+      <i class="fa fa-chevron-down"></i>
+    </div>
+      <input type="date"    id="dateInput" name="dateInput" class="dateInput">
+    </div>
+    <div id="filterBox" class="filter-box">
 
     </div>
-    <br/>
-    <br/>
-    <br/>
-     <!-- <div class="footer">
+      <br />
+      <br />
+      <br />
+      <!-- <button onclick="getData()">Check</button> -->
+      <div id="timeline" class="timeline"></div>
+      <br />
+      <br />
+      <br />
+      <!-- <div class="footer">
        <p>This is my footer</p>
      </div> -->
     </div>
- 
-    <!-- <script>
-        const data = [
-            {title:'Refactoring Third Party Service Consumption Logs',time:'3:45PM',buttonText:'main',url:'https://apigw-personal.fast-pay.iq',commit:'5 more commits'},
-            {title:'Refactoring Third Party Service Consumption Logs',time:'3:45PM',buttonText:'main',url:'https://apigw-personal.fast-pay.iq',commit:'5 more commits'},
-            {title:'Refactoring Third Party Service Consumption Logs',time:'3:45PM',buttonText:'main',url:'https://apigw-personal.fast-pay.iq',commit:'5 more commits'},
-            {title:'Refactoring Third Party Service Consumption Logs',time:'3:45PM',buttonText:'main',url:'https://apigw-personal.fast-pay.iq',commit:'5 more commits'},
-            {title:'Refactoring Third Party Service Consumption Logs',time:'3:45PM',buttonText:'main',url:'https://apigw-personal.fast-pay.iq',commit:'5 more commits'},
-        ]
 
-        function getData() {
-          console.log('working');
-          axios.get('https://jsonplaceholder.typicode.com/users')
-              .then(function (response) {
-                // handle success
-                console.log(response);
-              })
-              .catch(function (error) {
-                // handle error
-                console.log(error);
-              })
-          
-        }
-
-
-        const divTimeline = document.getElementById('timeline') 
-
-        function myData() {
-          divTimeline.innerHTML = `${data.map((item,i)=>{
-              if (i % 2 ===0) {
-                return(
-               `<div id="container" class="container left"> 
-                    <div class="content"> 
-                        <div class="contentDetailSide"> 
-                          <h2>${item.title}</h2> 
-                          <div class="middleDiv"> 
-                              <i class="fa fa-clock-o" aria-hidden="true"></i>  
-                              <label class="timeText">${item.time}</label>
-                              <button class="button">${item.buttonText}</button> 
-                          </div>
-
-                          <div>
-                              <i class="fa fa-at" aria-hidden="true"></i>
-                              <a href=${item.url} target="_blank" class="timeText">${item.url}</a>
-                          </div>
-                          <hr />
-                          <div class="linkDiv" >
-                              <details>
-                              <summary>${item.commit}</summary>
-                              ${[1,2,3,4,5].map((el)=>(
-                                `<p class="list">Epcot is a theme park at Walt Disney World Resort featuring exciting attractions.</p>`
-                              )).join("")}
-                              </details> 
-                          </div>
-                        </div> 
-                        <div class="contentTimeSide"> 
-                            <p>Jan</p> 
-                            <h4>14</h4> 
-                            <p>2022</p>
-                        </div> 
-                    </div> 
-                  </div>`
-                )
-              } 
-              else{
-                return(
-                  `<div id="container" class="container right"> 
-                  <div class="content"> 
-                    <div class="contentDetailSide"> 
-                      <h2>${item.title}</h2> 
-                      <div class="middleDiv"> 
-                        <i class="fa fa-clock-o" aria-hidden="true"></i>  
-                        <label class="timeText">${item.time}</label>
-                        <button class="button">${item.buttonText}</button> 
-                      </div>
-                      <div>
-                        <i class="fa fa-at" aria-hidden="true"></i>
-                        <a href=${item.url} target="_blank" class="timeText">${item.url}</a>
-                      </div>
-                      <hr />
-                      <div class="linkDiv" >
-                        <details>
-                              <summary>${item.commit}</summary>
-                              ${[1,2,3,4,5].map((el)=>(
-                                `<p class="list">Epcot is a theme park at Walt Disney World Resort featuring exciting attractions.</p>`
-                              )).join("")}
-                              </details> 
-                      </div>
-                    </div>
-                    <div class="contentTimeSide">
-                      <p>Jan</p> 
-                      <h4>14</h4> 
-                      <p>2022</p>
-                      </div>
-                  </div>
-                </div>`
-                )
-              }
-            })}`
-  
-          }
-        
-        
-    </script> -->
-  </body>
+    <script src="myscript.js"></script>
+    <script src="myscript2.js"></script>
    
+  </body>
 </html>

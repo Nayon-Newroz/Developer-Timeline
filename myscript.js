@@ -962,6 +962,7 @@ function myData(id) {
   }
 
   const divTimeline = document.getElementById(id);
+
   divTimeline.innerHTML = `${myNewData
     .map((item, i) => {
       console.log(item);
@@ -988,7 +989,7 @@ function myData(id) {
                   <hr />
                   <div class="linkDiv" >
                       <details>
-                      <summary>${item.commits.length - 1} more commits</summary>
+                      <summary> </summary>
                       
                       ${item.commits
                         .map((el, i) => {
@@ -1046,7 +1047,7 @@ function myData(id) {
           <hr />
           <div class="linkDiv" >
               <details>
-              <summary>${item.commits.length - 1} more commits</summary>
+              <summary class='summeryOpen'> </summary> 
            
               ${item.commits
                 .map((el, i) => {
